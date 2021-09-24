@@ -19,6 +19,6 @@ module Spree
       save
     end
 
-    ::Spree::Product.prepend self if ::Spree::Product.included_modules.exclude?(self)
+    ::Spree::Product.prepend self  
   end
 end
