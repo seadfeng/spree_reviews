@@ -19,7 +19,7 @@
     <span itemprop="author"><%= Spree.t(:anonymous) %></span>
   <% end %>
   <div itemprop="reviewBody">
-    <%= simple_format(review.review) %>
+    <%= sanitize simple_format(review.review), tags: %w(p b i br) %>
   </div>
   <% if Spree::Reviews::Config[:feedback_rating] && (!Spree::Reviews::Config[:require_login] || spree_current_user) %>
     <div class="feedback_review my-3" id="feedback_review_<%= review.id %>">
