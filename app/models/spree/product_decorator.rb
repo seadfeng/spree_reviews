@@ -19,6 +19,12 @@ module Spree
       save
     end
 
+    def best_rating
+      if reviews.reload.approved.any?
+        reviews.reload.approved.order('rating desc').first.ating
+      end
+    end
+
     ::Spree::Product.prepend self  
   end
 end
