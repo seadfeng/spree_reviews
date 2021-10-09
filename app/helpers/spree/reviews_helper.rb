@@ -17,8 +17,9 @@ module Spree::ReviewsHelper
     res
   end
 
-  def reviews_structured_hash(product)
-    return {} unless product.reviews.approved.any?
+  def reviews_structured_hash(product) 
+    return {} unless product.reviews.any? 
+    return {} unless product.reviews.approved.any? 
 
     reviews = product.reviews.approved
     reviews_hash = reviews.map do |review|

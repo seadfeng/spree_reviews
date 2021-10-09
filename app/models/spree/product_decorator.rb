@@ -21,7 +21,7 @@ module Spree
 
     def best_rating
       if reviews.reload.approved.any?
-        reviews.reload.approved.order('rating desc').first.ating
+        reviews.reload.approved.order('rating desc').first.rating
       end
     end
 
