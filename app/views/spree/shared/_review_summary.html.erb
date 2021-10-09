@@ -1,4 +1,4 @@
-<div id="reviews">
+<div id="reviews" class="col-12">
   <%= render 'spree/shared/rating', locals: @product, review: 0 %>
   <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).default_approval_filter.preview %>
     <%= render 'spree/shared/review', review: review %>
